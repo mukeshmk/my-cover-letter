@@ -49,9 +49,6 @@
 % IMPORTS %
 \usepackage{import}
 
-%%% Configure a directory location for sections
-\newcommand*{\sectiondir}{coverletter/}
-
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
@@ -80,6 +77,16 @@
 
 % \quote{``Be the change that you want to see in the world."}
 
+%-------------------------------------------------------------------------------
+%	LETTER VARIABLES
+%-------------------------------------------------------------------------------
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{coverletter/}
+%%% Other
+\newcommand{\role}{Computer Vision Deep Learning Engineer}
+\newcommand{\type}{Job Opening}
+\newcommand{\postedloc}{LinkedIn}
+
 
 %-------------------------------------------------------------------------------
 %	LETTER INFORMATION
@@ -97,7 +104,7 @@
 \letterdate{\today}
 
 % The title of the letter
-\lettertitle{Job Application for Software Engineer}
+\lettertitle{Job Application for \role}
 
 % How the letter is opened
 %\letteropening{Dear Mr./Ms./Dr. LastName,}
@@ -131,14 +138,7 @@
 %-------------------------------------------------------------------------------
 \begin{cvletter}
 
-I am writing this letter to express my interest for the
-{Job Opening}
-as
-\textbf{Computer Vision Deep Learning Engineer}
-role with your company% as posted on
-\textbf{
-%LinkedIn
-}.
+I am writing this letter to express my interest for the {\type} as \textbf{\role} role with your company as posted on \textbf{\postedloc}.
 I have been working as a Data Scientist Intern for the past month and have been working closely with the key concepts of Computer Vision and Machine Learning.
 
 % PARA 1 %
