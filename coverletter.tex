@@ -46,6 +46,11 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+% IMPORTS %
+\usepackage{import}
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{coverletter/}
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
@@ -55,7 +60,7 @@
 % \photo[circle,noedge,left]{profile}
 \name{Mukesh}{Arambakam}
 \position{Data Scientist{\enskip\cdotp\enskip}Back-End Developer}
-\address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
+\address{Apartment 20, St. James's Court, Echlin Street, Dublin 08, D08 X360}
 
 \mobile{(+353) 894960450}
 \email{amukesh.mk@gmail.com}
@@ -63,7 +68,7 @@
 \github{mukeshmk}
 \linkedin{mukeshmk95}
 % \gitlab{gitlab-id}
-\stackoverflow{4014678}{mukesh-a}
+% \stackoverflow{4014678}{mukesh-a}
 % \twitter{@twit}
 % \skype{skype-id}
 % \reddit{reddit-id}
@@ -84,9 +89,9 @@
 \recipient
   {Company Recruitment Team}
   {
-  Google Inc.
-  \\1600 Amphitheatre Parkway
-  \\Mountain View, CA 94043
+  Wavebreak Media
+  \\ Westpoint Business Park, Link Rd, 
+  \\ Carrigrohane, Ballincollig, Co. Cork
   }
 % The date on the letter, default is the date of compilation
 \letterdate{\today}
@@ -95,7 +100,8 @@
 \lettertitle{Job Application for Software Engineer}
 
 % How the letter is opened
-\letteropening{Dear Mr./Ms./Dr. LastName,}
+%\letteropening{Dear Mr./Ms./Dr. LastName,}
+\letteropening{Dear Hiring Manager,}
 
 % How the letter is closed
 \letterclosing{Sincerely,}
@@ -108,13 +114,13 @@
 
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[C]
+\makecvheader[R]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Claud D. Park~~~·~~~Cover Letter}
+  {Mukesh Arambakam~~~·~~~Cover Letter}
   {}
 
 % Print the title with above letter informations
@@ -125,14 +131,30 @@
 %-------------------------------------------------------------------------------
 \begin{cvletter}
 
+I am writing this letter to express my interest for the
+{Job Opening}
+as
+\textbf{Computer Vision Deep Learning Engineer}
+role with your company% as posted on
+\textbf{
+%LinkedIn
+}.
+I have been working as a Data Scientist Intern for the past month and have been working closely with the key concepts of Computer Vision and Machine Learning.
+
+% PARA 1 %
+\import{\sectiondir}{opening-ds.tex}
+
+% PARA 2 %
+\import{\sectiondir}{skills-ds.tex}
+
+% PARA 3 %
+\import{\sectiondir}{reiterate.tex}
+
 %\lettersection{About Me}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
 
 %\lettersection{Why Google?}
-Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
 
 %\lettersection{Why Me?}
-Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
 
 \end{cvletter}
 
