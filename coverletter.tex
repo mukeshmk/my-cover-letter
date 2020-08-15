@@ -48,6 +48,15 @@
 
 % IMPORTS %
 \usepackage{import}
+\usepackage{ifthen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     VARIABLE SET TO MAKE RESUME ATS COMPATIBLE
+%     SET ATS as 1 for the resume to be ATS friendly
+%     SET ATS as 0 otherwise
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{ats}
+\setcounter{ats}{1}
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
@@ -59,11 +68,22 @@
 \position{Data Scientist{\enskip\cdotp\enskip}Back-End Developer}
 \address{Apartment 20, St. James's Court, Echlin Street, Dublin 08, D08 X360}
 
-\mobile{(+353) 894960450}
+\ifthenelse{\value{ats}=1}
+{
+\infomobile{(+353) 89-4960-450}
+\infoemail{amukesh.mk@gmail.com}
+\infohome{http://mukeshmk.github.io/}
+\infolinkedin{https://www.linkedin.com/in/mukeshmk95/}
+}
+{
+\mobile{(+353) 89-4960-450}
 \email{amukesh.mk@gmail.com}
-\homepage{http://mukeshmk.github.io/}
+\homepage{\href{http://mukeshmk.github.io/}{mukeshmk.github.io}}
 \github{mukeshmk}
 \linkedin{mukeshmk95}
+\stackoverflow{4014678}{mukesh-a}
+}
+
 % \gitlab{gitlab-id}
 % \stackoverflow{4014678}{mukesh-a}
 % \twitter{@twit}
@@ -83,9 +103,9 @@
 %%% Configure a directory location for sections
 \newcommand*{\sectiondir}{coverletter/}
 %%% Other
-\newcommand{\role}{Computer Vision Deep Learning Engineer}
-\newcommand{\type}{Job Opening}
-\newcommand{\postedloc}{LinkedIn}
+\newcommand{\role}{Data Science Intern}
+\newcommand{\type}{Intern Opportunities for Students in Ireland}
+\newcommand{\postedloc}{Microsoft Carriers}
 
 
 %-------------------------------------------------------------------------------
@@ -96,9 +116,9 @@
 \recipient
   {Company Recruitment Team}
   {
-  Wavebreak Media
-  \\ Westpoint Business Park, Link Rd, 
-  \\ Carrigrohane, Ballincollig, Co. Cork
+  Microsoft
+  \\ South County Business Park, One Microsoft Place,
+  \\ Carmanhall and Leopardstown, Dublin
   }
 % The date on the letter, default is the date of compilation
 \letterdate{\today}
@@ -138,7 +158,7 @@
 %-------------------------------------------------------------------------------
 \begin{cvletter}
 
-I am writing this letter to express my interest for the {\type} as \textbf{\role} role with your company as posted on \textbf{\postedloc}.
+I am writing this letter to express my interest for the {\type} as a \textbf{\role} with your company as posted on \textbf{\postedloc}.
 I have been working as a Data Scientist Intern for the past month and have been working closely with the key concepts of Computer Vision and Machine Learning.
 
 % PARA 1 %
