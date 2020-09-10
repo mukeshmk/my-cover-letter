@@ -66,7 +66,7 @@
 % \photo[circle,noedge,left]{profile}
 \name{Mukesh}{Arambakam}
 \position{Data Scientist{\enskip\cdotp\enskip}Back-End Developer}
-\address{Apartment 20, St. James's Court, Echlin Street, Dublin 08, D08 X360}
+\address{Dublin, Ireland}
 
 \ifthenelse{\value{ats}=1}
 {
@@ -103,9 +103,9 @@
 %%% Configure a directory location for sections
 \newcommand*{\sectiondir}{coverletter/}
 %%% Other
-\newcommand{\role}{Data Science Intern}
-\newcommand{\type}{Intern Opportunities for Students in Ireland}
-\newcommand{\postedloc}{Microsoft Carriers}
+\newcommand{\role}{Java Developer}
+\newcommand{\type}{Job Opening}
+\newcommand{\postedloc}{Nova Leah Carrier Page}
 
 
 %-------------------------------------------------------------------------------
@@ -116,9 +116,10 @@
 \recipient
   {Company Recruitment Team}
   {
-  Microsoft
-  \\ South County Business Park, One Microsoft Place,
-  \\ Carmanhall and Leopardstown, Dublin
+  Nova Leah Ltd,\\
+  Finnabair Industrial Estate,\\
+  Haggardstown, Dundalk, \\
+  Co. Louth, Ireland
   }
 % The date on the letter, default is the date of compilation
 \letterdate{\today}
@@ -135,6 +136,13 @@
 % Any enclosures with the letter
 \letterenclosure[Attached]{Resume}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     VARIABLE SET TO MAKE RESUME ATS COMPATIBLE
+%     SET DS_OR_BE as 1 for Data Science Resume
+%     SET DS_OR_BE as 0 for Back End Developer Resume
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{ds_or_be}
+\setcounter{ds_or_be}{0}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -158,14 +166,31 @@
 %-------------------------------------------------------------------------------
 \begin{cvletter}
 
-I am writing this letter to express my interest for the {\type} as a \textbf{\role} with your company as posted on \textbf{\postedloc}.
-I have been working as a Data Scientist Intern for the past month and have been working closely with the key concepts of Computer Vision and Machine Learning.
+I am writing this letter to express my interest in the {\type} as a \textbf{\role} with your company as posted on \textbf{\postedloc}.
+\ifthenelse{\value{ds_or_be}=1}
+{
+    I have worked as a Data Science Intern, where I used various statistical analysis and modelling techniques to unlock value and provided unique insights to solve real world problems. I also worked closely with the key concepts of Computer Vision and Machine Learning.
+}
+{
+    I have worked as a Backend Engineer, where I used Java and Java based technologies to build and develop enterprise level applications. I have closely worked with databases, writing queries, optimising existing queries and improving performance. 
+}
 
 % PARA 1 %
-\import{\sectiondir}{opening-ds.tex}
-
-% PARA 2 %
-\import{\sectiondir}{skills-ds.tex}
+\ifthenelse{\value{ds_or_be}=1}
+{
+    % PARA 1 %
+    \import{\sectiondir}{opening-ds.tex}
+    
+    % PARA 2 %
+    \import{\sectiondir}{skills-ds.tex}
+}
+{
+    % PARA 1 %
+    \import{\sectiondir}{opening-be.tex}
+    
+    % PARA 2 %
+    \import{\sectiondir}{skills-be.tex}
+}
 
 % PARA 3 %
 \import{\sectiondir}{reiterate.tex}
